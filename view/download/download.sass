@@ -1,0 +1,119 @@
+
+@import "../../style/variable.scss"
+.download
+    width: 100%
+    height: 100%
+    #_1stScreen
+        background: url("../../assets/images/down_1st.png") no-repeat
+        background-size: cover
+        padding: 0 20vw
+        font-size: 0
+        .firstScreen
+            display: flex
+            justify-content: center
+            #phoneStandWrap
+                width: 21vw
+                height:                 
+                #phoneStand
+                    width: 21vw
+                    height: 40vw
+            .word_1 img:nth-child(1)
+                width: 12vw
+            .word_1 img:nth-child(2)
+                width: 8vw 
+                margin: 10vw 0 0 2vw 
+            .word_1 img:nth-child(3)    
+                width: 20vw
+                margin: 2vw 0 0 15vw 
+            #qrBox
+                display: flex
+                padding: 2vw
+                justify-content: center
+                img
+                    width: 8vw
+                    margin: 0 auto
+                .commonQr 
+                    display: flex
+                    justify-content: center
+                    flex-direction: column
+                    padding: 0.5vw 
+                    text-align: center
+                    background: rgba(255,255,255,0.4) 
+                    margin: 0 2vw
+                    p
+                        padding: 0.5vw 0 0 0
+                        color: #fff
+                        margin-bottom: 0
+                        font-size: 1vw
+        #friendLink
+            display: flex
+            // margin: 3vw 0    
+            font-size: 1vw
+            justify-content: center
+            color: rgba(216,216,216,0.8)
+            li a
+                color: rgba(216,216,216,0.8)
+                margin: 0 2vw                
+    #_2ndScreen 
+        background: url("../../assets/images/down_2nd.png") no-repeat        
+        background-size: cover
+        padding: 2vw 20vw
+        .secondScreen
+            display: flex
+            justify-content: center
+            position: relative
+            #lyingPhone
+                position: absolute
+            #lyingPhone img:nth-child(1)
+                width: 35vw
+            #lyingPhone img:nth-child(2)
+                position: relative
+                width: 18vw
+                left: -28.5vw
+                top: -1.8vw
+            #des
+                color: #fff    
+                position: relative
+                left: 20vw
+                display: flex
+                flex-direction: column
+                padding: 2vw 18vw
+            #des p:nth-child(1)   
+                font-size: 3vw 
+            #des p:nth-child(2)
+                font-size: 2vw 
+                text-align: center
+                letter-spacing: 0.5vw
+                span
+                    padding: 0 1vw  
+            #des p:nth-child(3)
+                font-size: 0.8vw                                 
+               
+    #_3rdScreen 
+        background: url("../../assets/images/down_3rd.png") no-repeat      
+        background-size: cover   
+        padding: 2vw 20vw
+        #upContent
+            display: flex
+            justify-content: center
+            flex-direction: column
+            padding: 2vw 15vw
+            text-align: center
+            color: #fff
+            line-height: 2vw
+        #upContent p
+            margin-bottom: 1vw    
+        #upContent p:nth-child(1)   
+            font-size: 1vw 
+            letter-spacing: 2vw
+            margin-left: 2vw
+            text-align: center
+        #upContent p:nth-child(2)
+            font-size: 3vw 
+            text-align: center
+            // letter-spacing: 0.5vw
+        span
+            padding: 0 1vw  
+        #upContent p:nth-child(3)
+            font-size: 0.8vw      
+            padding: 0 3vw    
