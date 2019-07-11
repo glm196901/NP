@@ -19,7 +19,6 @@ import '../../lib/prototype'
 class App extends Component {
     
 
- 
 
     render() {
         return (
