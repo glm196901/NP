@@ -35,21 +35,6 @@ import EveryWeek from '../infoCenter/everyWeek'
 
 
 
-class TabComponent extends React.Component{
-
-    
-    render(){
-        
-
-        return(
-                <TabsControl>
-                    <div add="/marketcenter/international" name="国际期货"></div>
-                    <div add="/marketcenter/stockindex" name="股指期货"></div>
-                    <div add="/marketcenter/domestic" name="国内期货"></div>
-                </TabsControl>
-            );
-    }
-}
 
 
 
@@ -65,13 +50,13 @@ const Fullpage = () => (
           <ReactFullpage.Wrapper>
             <div id="_1stScreen" className="section">
                 <div className="commonStyle">
-                    <div class="slide">
+                    <div className="slide">
                         <h3><Stockindex/></h3>
                     </div>
-                    <div class="slide">
+                    <div className="slide">
                         <h3><Domestic/></h3>
                     </div>
-                    <div class="slide">
+                    <div className="slide">
                         <h3><International/></h3>
                     </div>                    
                 </div>

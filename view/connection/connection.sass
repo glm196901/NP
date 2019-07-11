@@ -1,0 +1,55 @@
+.connection
+    width: 100%
+    height: 100%
+    overflow-y: scroll   
+    background: url("../../assets/images/connection.png") no-repeat
+    background-size: cover
+    position: relative
+    z-index: 1
+    .navBox
+        position: relative      
+    .contain
+        background-size: cover  
+        height: 100%
+        padding: 2vw 15vw
+        display: flex
+.connection::after
+    content: ''
+    position: absolute
+    top: 0
+    right: 0
+    bottom: 0
+    left: 0
+    filter: blur(100px)
+    z-index: -1
+    background: rgba(17,49,94,0.4)
+    // opacity: 0.5     
+    height: 100%      
+.connection .corp 
+    padding: 15vw 2vw
+    margin: 0 auto
+    color: #fff
+    font-size: 1vw
+    text-align: center
+    .corpTitle
+        font-size: 2vw
+        .underline
+            border: 1px solid #fff
+            width: 3vw
+            margin: 0 auto
+    .wrapDown
+        display: flex
+        padding: 4vw 0
+        .spot
+            letter-spacing: 0.5vw
+            line-height: 8vw        
+        .corpWrap
+            margin: 0 2vw
+            .corpStep
+                text-align: left
+            .corpStep span:nth-child(1)
+                font-size: 2vw
+            .corpStep span:nth-child(2)
+                font-weight: bold
+            .txt
+                font-size: 0.9vw

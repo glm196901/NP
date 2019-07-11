@@ -1,0 +1,149 @@
+.partner
+    width: 100%
+    padding:  1vw 3vw
+    margin: 0 1vw
+    position: relative
+    overflow: auto   
+    z-index: 1  
+    border: 1px solid rgba(151,151,151,0.5)
+    height: 100%
+    transition: all 1s ease  
+    .titleName    
+        font-size: 2vw
+        color: #ffffff
+        padding: 1vw 0
+        z-index: 1
+.partner::before
+    content: ''
+    position: absolute
+    top: 0
+    right: 0
+    bottom: 0
+    left: 0
+    filter: blur(100px)
+    z-index: -1
+    background: rgba(255,255,255,0.3)
+    opacity: 0.5    
+.partner .inviteBox
+    // padding: 2vw
+    display: flex
+    .inviteLeft
+        display: flex
+        flex-direction: column
+        width: 40%
+        justify-content: center
+        // text-align: center
+        .inviteCommon
+            margin: 2vw auto
+    .inviteLeft img:nth-child(1)
+        width: 15vw    
+    .inviteLeft img:nth-child(2)
+        width: 15vw                                       
+    .inviteLeft img:nth-child(3)
+        width: 15vw  
+    .inviteLeft .qrCode
+        display: flex  
+    .inviteRight
+        display: flex 
+        flex-direction: column
+        padding: 1vw 1vw 0 2vw
+        width: 60%
+        .how
+            background: url("../../assets/images/broad.png") no-repeat
+            background-size: 100%
+            width: 8vw 
+            height: 3vw
+            text-align: center
+            line-height: 3vw
+            color: #fff
+            margin: 1vw
+            font-size: 1vw
+            text-align: center
+        .icons
+            display: flex   
+            width: 100% 
+            .icon
+                display: flex
+                width: 25%
+                flex-direction: column
+                justify-content: center
+            .icon img
+                margin: 0 auto
+                text-align: center
+                flex: 1
+            .iconTitle    
+                color: #fff 
+                font-size: 0.8vw
+                font-weight: bold
+                text-align: center
+                line-height: 2vw
+            .iconTxt
+                color: #fff 
+                font-size: 0.7vw
+                text-align: center
+        .agencyTable    
+            width: 100%
+            height: 20vw
+            margin: 3vw 0 0
+            .agencyTitle
+                background-image: url("../../assets/images/thead.png") 
+                background-size: cover  
+                height: 3vw            
+            .agencyTxt
+                background: #fff 
+                height: 90%
+                margin-left: 0.1vw 
+                display: flex
+                .column0
+                    width: 25%
+                    text-align: center
+                    display: flex
+                    flex-direction: column
+                .column1
+                    width: 50%
+
+                    .subColunm
+                        width: 100%
+                        display: flex
+                        .subColumn0
+                            width: 50%
+                            text-align: center
+                            div
+                                height: 45.5%
+                                border-bottom: 1px solid rgba(0,0,0,0.1)
+                                font-size: 0.9vw
+                                padding: 1vw 0
+                                border-right: 1px solid rgba(0,0,0,0.1)
+
+                    .subColumBottom
+                        border-right: 1px solid rgba(0,0,0,0.1)
+                        padding: 4vw 2.5vw
+                        font-size: 0.9vw
+                .column2
+                    width: 25%      
+                    text-align: center
+                    height: 100%
+                    div
+                        font-size: 0.9vw
+                    div:nth-child(1)
+                        height: 17%  
+                        border-bottom: 1px solid rgba(0,0,0,0.1)
+                        padding: 1vw 0
+                    div:nth-child(2)
+                        height: 17.3%  
+                        border-bottom: 1px solid rgba(0,0,0,0.1)
+                        padding: 1vw 0
+                    div:nth-child(3)
+                        height: 66.4%  
+                        border-left: 1px solid rgba(0,0,0,0.1)
+                        margin-left: -0.05vw
+                        padding: 5vw 0
+                .rank
+                    height: 16.7%
+                    padding: 1vw 0
+                    border-right: 1px solid rgba(0,0,0,0.1)
+                    font-size: 0.9vw
+                .line
+                    border-top: 1px solid rgba(0,0,0,0.1)
+                    font-size: 0.8vw
+    

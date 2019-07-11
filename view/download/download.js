@@ -3,11 +3,8 @@ import React, {Component} from 'react';
 
 
 import Header from '../common/header/header'
-import Footer from '../common/footer/footer'
 
-import LineTitle from '../component/lineTitle/lineTitle'
-import DownloadIcon from '../component/downloadIcon/downloadIcon'
-import Qrcode from '../component/qrcode/qrcode'
+
 
 import ReactDOM from 'react-dom';
 import ReactFullpage from '@fullpage/react-fullpage';
@@ -53,7 +50,16 @@ class FirstScreen extends Component{
 }
 
 class FriendLink extends Component{
+
+    componentWillMount(){
+
+        
+
+
+    }
+    
     render(){
+
         return(
             <ul id="friendLink">
                 <li>
@@ -101,17 +107,38 @@ class ThirdScreen extends Component{
                     <p>信息即时推送</p>
                     <p>
                         <span>福利优惠</span>
-                        <span style={ {"font-size" : "3vw"} }>·</span>
+                        <span style={ {"fontSize" : "3vw"} }>·</span>
                         <span>全面囊括</span>
                     </p>
                     <p>持仓信息即时更新，条理分明展现复杂数据，只需登陆信达期货手机客户端，立马查看所有盈亏记录信息，轻松快速管理您的财富。</p>
                 </div>
                 <div id="downContent">
-                    <div id="lefter"></div>
-                    <div id="left"></div>
-                    <div id="middle"></div>
-                    <div id="right"></div>
-                    <div id="righter"></div>
+                    <div className="commonSize" id="lefter">
+                        <img src={require("../../assets/images/water.png")} alt=""/>
+                        <img src={require("../../assets/images/goldCoin.png")} alt=""/>
+                        <img src={require("../../assets/images/word2.png")} alt=""/>
+                        <img src={require("../../assets/images/coin.png")} alt=""/>
+                    </div>
+                    <div className="commonSize" id="left">
+                        <img src={require("../../assets/images/word2.png")} alt=""/>
+                        <img src={require("../../assets/images/redPocket.png")} alt=""/>
+                        <img src={require("../../assets/images/word2.png")} alt=""/>
+                        <img src={require("../../assets/images/trumpet.png")} alt=""/>
+                        <img src={require("../../assets/images/word2.png")} alt=""/>
+                    </div>
+                    <img className="commonSize" id="middle" src={require("../../assets/images/iphone.png")} alt=""/>
+                    <div className="commonSize" id="right">
+                        <img src={require("../../assets/images/grid.png")} alt=""/>
+                        <img src={require("../../assets/images/word5.png")} alt=""/>
+                        <img src={require("../../assets/images/stock.png")} alt=""/>
+                        <img src={require("../../assets/images/visa.png")} alt=""/>
+                    </div>
+                    <div className="commonSize" id="righter">
+                        <img src={require("../../assets/images/giftBox.png")} alt=""/>
+                        <img src={require("../../assets/images/word5.png")} alt=""/>
+                        <img src={require("../../assets/images/pig.png")} alt=""/>
+                        <img src={require("../../assets/images/word5.png")} alt=""/>                        
+                    </div>
                 </div>
             </div>
         )
@@ -143,6 +170,15 @@ class Fullpage extends Component{
                  const lyingPhone = document.getElementById("lyingPhone")
                  const pop = document.getElementById("pop")
                  const des =  document.getElementById("des")
+                // 第三屏
+                const upContent = document.getElementById("upContent")
+                const middle = document.getElementById("middle")
+                const left =  document.getElementById("left")     
+                const lefter =  document.getElementById("lefter")   
+                const right = document.getElementById("right")   
+                const righter = document.getElementById("righter")            
+
+
                 // 第二屏
                  if(destination.index === 0){
                     phoneStand.classList.add('animated', 'fadeInLeft')
@@ -186,6 +222,35 @@ class Fullpage extends Component{
                 }
 
             // 第三屏
+            if(destination.index === 2){
+                upContent.classList.add('animated', 'fadeInDown', )
+                upContent.setAttribute("style", "")
+                middle.classList.add('animated', 'fadeInUp', )
+                middle.setAttribute("style", "")
+                left.classList.add('animated', 'fadeInLeft', 'delay-1s')
+                left.setAttribute("style", "")
+                lefter.classList.add('animated', 'fadeInLeft', 'delay-2s')
+                lefter.setAttribute("style", "")     
+                right.classList.add('animated', 'fadeInRight', 'delay-1s')
+                right.setAttribute("style", "")
+                righter.classList.add('animated', 'fadeInRight', 'delay-2s')
+                righter.setAttribute("style", "")                             
+
+
+            }else{
+                upContent.setAttribute("style", "display:none")
+                upContent.classList.remove('animated', 'fadeInDown')   
+                middle.setAttribute("style", "display:none")
+                middle.classList.remove('animated', 'fadeInUp')   
+                left.classList.remove('animated', 'fadeInLeft')
+                left.setAttribute("style", "display:none")
+                lefter.classList.remove('animated', 'fadeInLeft')
+                lefter.setAttribute("style", "display:none")  
+                right.classList.remove('animated', 'fadeInRight')
+                right.setAttribute("style", "display:none")
+                righter.classList.remove('animated', 'fadeInRight')
+                righter.setAttribute("style", "display:none")                      
+            }            
 
             }}
               render={({ state, fullpageApi }) => { 
@@ -237,8 +302,6 @@ class Fullpage extends Component{
             <div className={"download"}>
                 <Header/>
                 <Fullpage/>
-
-                <Footer/>
             </div>
         )
     }

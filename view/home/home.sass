@@ -11,16 +11,34 @@
             position: absolute
             top: 0
             height: 100%    
-        #_1stScreen .fstTitle    
-            color: #ffffff
-            position: absolute
-            font-size: 10vw
-            top: 50%
+        #_1stScreen .screenTitle
+            display: flex
+            justify-content: center 
+            img
+                width: 40vw              
         #_1stScreen #backgroundVideo
+            position: absolute
+            top: 50%
+            left: 50%
+            width: auto
+            height: auto
+            min-width: 150%
+            min-height: 130%
+            z-index: -100
+            -moz-transform: translate(-50%, -50%)
+            -ms-transform: translate(-50%, -50%)
+            -webkit-transform: translate(-50%, -50%)
+            transform: translate(-50%, -50%)
             // width: 100%    
         #_2ndScreen
             background: url("../../assets/images/bitmap.png") no-repeat
-            background-size: cover             
+            background-size: cover    
+            .screenTitle
+                display: flex
+                justify-content: center         
+                margin:  0 0 2vw 0     
+                img
+                    width: 50vw                  
             .accordionNav
                 display: flex
                 padding: 0 20vw
@@ -32,11 +50,11 @@
                     font-size: 3vw
                     text-align: center
                     line-height: 40vw
+                    transition: all 0.5s ease  
                 .commonTitle p
                     // width: 1vw    
                 .commonTxt
                     width: 40vw     
-                    transition: all 1s ease  
                     display: flex
                     flex-direction: column-reverse
                     .wrapTxt      
@@ -74,6 +92,12 @@
             justify-content: center
             flex-direction: row
             padding: 15vw 15vw
+            .screenTitle
+                display: flex
+                justify-content: center         
+                margin:  0 0 2vw 0    
+                img
+                    width: 50vw                      
             .wrapPad
                 display: flex
                 flex-direction: row

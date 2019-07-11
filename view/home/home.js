@@ -10,14 +10,14 @@ import Footer from '../common/footer/footer'
 
 
 import './home.sass'
-
+import 'animate.css'
 
 // 第一屏 title 和 video
-class FstTitle extends Component{
+class ScreenTitle extends Component{
     render(){
         return(
-            <div className={"fstTitle"}>
-                asdasdasdasd
+            <div className={"screenTitle"}>
+                <img src={this.props.src} alt=""/>
             </div>
         )
     }
@@ -34,7 +34,7 @@ class Video extends Component{
     }    
     render(){
         return(
-            <video id="backgroundVideo" loop autoPlay controls>
+            <video id="backgroundVideo" loop data-autoplay muted>
                 <source src={require('../../assets/images/adVIdeo.mp4')} type="video/mp4" />
             </video>
         )
@@ -64,13 +64,11 @@ class AccordionNav extends Component{
         this.setState({ isIdeaT:false, isBrief:false, isqualified:true })      
     }
     render(){
-
-
         if(this.state.isqualified === true){ 
             return(
                 <div className="accordionNav">
                     <div className="qualifiedTxt commonTxt">
-                        <div className="wrapTxt">
+                        <div className="wrapTxt delay-1s fadeOut">
                             <p>資質</p>
                             <p>本公司是一家獲得香港證監會發牌的持牌法團，獲核准從事第1類(證券交易)及第2類(期貨合約交易)受規管活動(CE號碼:BJH986)，並為香港聯合交易所有限公司及香港期貨交易所有限公司的交易所參與者。 </p>
                         </div>
@@ -149,29 +147,28 @@ const Fullpage = () => (
           <ReactFullpage.Wrapper>
             <div id="_1stScreen" className="section">
                 <Video/>
-                <FstTitle/>
+                <ScreenTitle src={require("../../assets/images/_1stTitle.png")} />
             </div>
             <div id="_2ndScreen" className="section">
+                <ScreenTitle src={require("../../assets/images/_2ndTitle.png")}/>
                 <AccordionNav/>
             </div>
             <div id="_3rdScreen" className="section">
+                 <ScreenTitle src={require("../../assets/images/_3rdTitle.png")}/>
                 <div className="wrapPad">
                     {padLists.map((padList, k)=> <Pad key={k} padList={padList}  /> )}
                 </div>
                 <ul className="friendLink">
                     <li>
                         <span>友情链接: </span>
-                        <a href="">纽约商业交易所</a>
+                        <a href="https://www.cmegroup.com/">纽约商业交易所</a>
                     </li>
-                    <li><a href="">新加坡交易所</a></li>
-                    <li><a href="">上海期货交易所</a></li>
-                    <li><a href="">中国期货交易所</a></li>
-                    <li><a href="">欧洲期货交易所 </a></li>
+                    <li><a href="https://www2.sgx.com/">新加坡交易所</a></li>
+                    <li><a href="http://www.shfe.com.cn/">上海期货交易所</a></li>
+                    <li><a href="http://www.cffex.com.cn/">中国期货交易所</a></li>
+                    <li><a href="https://www.eurexchange.com/exchange-en/">欧洲期货交易所 </a></li>
                 </ul>
             </div>     
-            {/* <div id="_4thScreen" className="section " style={ {background:'#000', height:"0"} }>
-                <Footer/>
-            </div>             */}
           </ReactFullpage.Wrapper>
         );
       }}

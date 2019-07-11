@@ -3,7 +3,7 @@ import {Table} from 'antd'
 
 import React, { Component } from 'react'
 import {exposure, spy} from "../../../../../../core/store";
-import {Contracts, Custom} from "../../../../../../pro/contract";
+import {Contracts, Custom, Data} from "../../../../../../pro/contract";
 import {EVENT} from "../../../../../../pro/event";
 
 
@@ -29,18 +29,18 @@ import {EVENT} from "../../../../../../pro/event";
         };
 
         if (Contracts.initial) {
-            this.state.foreignArray = Custom.foreignBrief;
-            this.state.stockArray = Custom.stockBrief;
-            this.state.domesticArray = Custom.domesticBrief;
-            this.state.selfArray = Custom.selfBrief;
-            this.state.allArray = Custom.allBrief;
+            this.state.foreignArray = Data.foreignBrief;
+            this.state.stockArray = Data.stockBrief;
+            this.state.domesticArray = Data.domesticBrief;
+            this.state.selfArray = Data.selfBrief;
+            this.state.allArray = Data.allBrief;
             let [o] = Contracts.foreignArray;
             this.state.contract = o.contract;
             this.state.name = o.name;
             this.state.goodsCode = o.code;
             this.state.hot = Contracts.hot;
             this.state.news = Contracts.new;
-            Custom.start('customUpdate');
+            Data.start('customUpdate');
         } else {
             spy('contractsInitial', this.updateContracts, this, Contracts.initial);
         }
@@ -112,21 +112,21 @@ import {EVENT} from "../../../../../../pro/event";
                   )
             }
             },
-            {
-             title: '最低',
-             dataIndex: 'min',
-             key:"min"
-            },
-            {
-            title: '最高',
-            dataIndex: 'max',
-            key:"max"
-           },
-           {
-            title: '持仓',
-            dataIndex: 'holdVolume',
-            key:"holdVolume"
-           }
+        //     {
+        //      title: '最低',
+        //      dataIndex: 'min',
+        //      key:"min"
+        //     },
+        //     {
+        //     title: '最高',
+        //     dataIndex: 'max',
+        //     key:"max"
+        //    },
+        //    {
+        //     title: '持仓',
+        //     dataIndex: 'holdVolume',
+        //     key:"holdVolume"
+        //    }
           ]
 
 
@@ -157,21 +157,21 @@ import {EVENT} from "../../../../../../pro/event";
             contract: o.contract,
             name: o.name,
             goodsCode: o.code,
-            foreignArray: JSON.parse(JSON.stringify(Custom.foreignBrief)),
-            stockArray: JSON.parse(JSON.stringify(Custom.stockBrief)),
-            domesticArray: JSON.parse(JSON.stringify(Custom.domesticBrief)),
-            selfArray: JSON.parse(JSON.stringify(Custom.selfBrief)),
-            allArray: JSON.parse(JSON.stringify(Custom.allBrief)),
+            foreignArray: JSON.parse(JSON.stringify(Data.foreignBrief)),
+            stockArray: JSON.parse(JSON.stringify(Data.stockBrief)),
+            domesticArray: JSON.parse(JSON.stringify(Data.domesticBrief)),
+            selfArray: JSON.parse(JSON.stringify(Data.selfBrief)),
+            allArray: JSON.parse(JSON.stringify(Data.allBrief)),
             hot: Contracts.hot,
             news: Contracts.new
         });
-        Custom.start('customUpdate')
+        Data.start('customUpdate')
     }
 
     //todo 数据刷新
     updateBrief() {
         this.setState((state) => {
-            Custom.foreignBrief.map((newItem, newIndex) => {
+            Data.foreignBrief.map((newItem, newIndex) => {
                 state.foreignArray.map((item, index) => {
                     if (index === newIndex) {
                         parseFloat(newItem.price) - parseFloat(item.price) > 0 ? newItem['up'] = -1 :
@@ -180,7 +180,7 @@ import {EVENT} from "../../../../../../pro/event";
                 })
             });
 
-            Custom.stockBrief.map((newItem, newIndex) => {
+            Data.stockBrief.map((newItem, newIndex) => {
                 state.stockArray.map((item, index) => {
                     if (index === newIndex) {
                         parseFloat(newItem.price) - parseFloat(item.price) > 0 ? newItem['up'] = -1 :
@@ -190,7 +190,7 @@ import {EVENT} from "../../../../../../pro/event";
             });
                 // console.log(Custom.stockBrief)
 
-            Custom.domesticBrief.map((newItem, newIndex) => {
+            Data.domesticBrief.map((newItem, newIndex) => {
                 state.domesticArray.map((item, index) => {
                     if (index === newIndex) {
                         parseFloat(newItem.price) - parseFloat(item.price) > 0 ? newItem['up'] = -1 :
@@ -199,11 +199,11 @@ import {EVENT} from "../../../../../../pro/event";
                 })
             });
             return {
-                foreignArray: JSON.parse(JSON.stringify(Custom.foreignBrief)),
-                stockArray: JSON.parse(JSON.stringify(Custom.stockBrief)),
-                domesticArray: JSON.parse(JSON.stringify(Custom.domesticBrief)),
-                selfArray: JSON.parse(JSON.stringify(Custom.selfBrief)),
-                allArray: JSON.parse(JSON.stringify(Custom.allBrief))
+                foreignArray: JSON.parse(JSON.stringify(Data.foreignBrief)),
+                stockArray: JSON.parse(JSON.stringify(Data.stockBrief)),
+                domesticArray: JSON.parse(JSON.stringify(Data.domesticBrief)),
+                selfArray: JSON.parse(JSON.stringify(Data.selfBrief)),
+                allArray: JSON.parse(JSON.stringify(Data.allBrief))
             }
         });
     }

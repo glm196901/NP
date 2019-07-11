@@ -1,0 +1,51 @@
+.guide
+    width: 100%
+    padding:  1vw 3vw
+    margin: 0 1vw
+    position: relative
+    overflow: auto   
+    z-index: 1  
+    border: 1px solid rgba(151,151,151,0.5)
+    height: 100%
+    .titleName    
+        font-size: 2vw
+        color: #ffffff
+        padding: 1vw 0
+        z-index: 1
+.guide::before
+    content: ''
+    position: absolute
+    top: 0
+    right: 0
+    bottom: 0
+    left: 0
+    filter: blur(100px)
+    z-index: -1
+    background: rgba(255,255,255,0.3)
+    opacity: 0.5    
+.guide .stepBox
+        padding: 2vw 2vw
+        width: 100% 
+        .stepRight
+            display: flex
+            flex-direction: row
+        .stepLeft
+            display: flex
+            flex-direction: row-reverse
+        .stepWrap
+            font-size: 0.8vw
+            color: #fff
+            padding: 2vw
+            .stepIcon
+                font-size: 0.9vw
+                height: 1.5vw
+                background: #DF4D44
+                border-radius: 50px
+                width: 4vw
+                text-align: center
+                line-height: 1.5vw
+            .stepTitle
+                font-size: 1vw
+                font-weight: bold
+                line-height: 2vw
+

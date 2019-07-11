@@ -101,17 +101,17 @@ class MonthView extends Component{
                 data.map((item , i)=>{
 
                     if(item.unit === "%"){
-                        if(item.consensus  != null){
+                        if(item.consensus && item.consensus !== null){
                             item.consensus += "%"
                         }
-                        if(item.actual != null){
+                        if(item.actual && item.actual !== null){
                             item.actual += "%"
 
                         }
-                        if(item.previous != null ){
+                        if(item.previous && item.previous !== null ){
                             item.previous += "%"
                         }
-
+                        
                     }
                     if(item.consensus === null ){
                         item.consensus="未公布"

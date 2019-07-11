@@ -31,6 +31,7 @@ export default [
     {
         path: '/',
         exact: true,
+        // component: Home 
         component: Home 
     },
     {
@@ -46,7 +47,7 @@ export default [
                 component: Future
             },
             {
-                path: '/introduce/organizaition',
+                path: '/introduce/organization',
                 component: Organizaition,
             },
             {
@@ -106,4 +107,8 @@ export default [
         ]
 
     },
+    {
+        path: '/connection',
+        component: Connection
+    }
 ]
